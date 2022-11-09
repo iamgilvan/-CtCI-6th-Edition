@@ -3,29 +3,18 @@ import unittest
 from chapter_02.linked_list import LinkedList
 
 
-def partition(ll, x):
-    current = ll.tail = ll.head
-
-    while current:
-        next_node = current.next
-        current.next = None
-        if current.value < x:
-            current.next = ll.head
-            ll.head = current
-        else:
-            ll.tail.next = current
-            ll.tail = current
-        current = next_node
-
-    # Error check in case all nodes are less than x
-    if ll.tail.next is not None:
-        ll.tail.next = None
+def partition(ll):
+    current = ll.head
     values_processed = []
-    node = ll.head
-    while node:
-        values_processed.append(node.value)
-        node = node.next
-    return values_processed
+    while current:
+       values_processed.append(current.value)
+       current = current.next
+
+    values_processed = sorted(values_processed)
+
+    new_linkedList = LinkedList(values_processed)
+
+    return new_linkedList.values()
 
 
 class Test(unittest.TestCase):
@@ -39,9 +28,8 @@ class Test(unittest.TestCase):
         for function in self.test_functions:
             start = time.perf_counter()
             for _ in range(100):
-                #for values, expected in self.test_cases:
                 ll = LinkedList.generate(10, 0, 99)
-                values = function(ll , ll.head.value )
+                values = function(ll)
                 key_index = values.index(ll.head.value)
                 values_before_index = values[:key_index]
                 values_after_index = values[key_index + 1:]
@@ -56,14 +44,5 @@ class Test(unittest.TestCase):
             duration = time.perf_counter() - start
             print(f"{function.__name__} {duration * 1000:.1f}ms")
 
-def example():
-
-    ll = LinkedList.generate(10, 0, 99)
-    print(ll.values())
-    partition(ll, ll.head.value)
-    print(ll.values())
-
-
 if __name__ == "__main__":
-    example()
-    #unittest.main()
+    unittest.main()
