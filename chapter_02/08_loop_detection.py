@@ -1,6 +1,8 @@
 from chapter_02.linked_list import LinkedList
 
 # is not correct one hundred percent
+# # we need to explore other situations
+
 def loop_detection(ll):
     fast = ll.head
     slow = ll.head.next
