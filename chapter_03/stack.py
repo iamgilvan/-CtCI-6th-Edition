@@ -23,3 +23,6 @@ class Stack:
     def __bool__(self):
         # lets us use the stack as a conditional
         return bool(self.items)
+
+    def remove_bottom(self):
+        return self.items.pop(0)
