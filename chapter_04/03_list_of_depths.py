@@ -5,7 +5,7 @@ from chapter_02.linked_list import LinkedList
 from chapter_04.binary_search_tree import BinarySearchTree, Node
 from chapter_04.binary_tree import BinaryTree
 
-#(O)N
+#O(H)
 def create_node_list_by_depth(tree):
     if tree is None:
         return 0
