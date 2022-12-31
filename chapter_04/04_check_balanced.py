@@ -1,27 +1,29 @@
 import unittest
 from chapter_04.binary_search_tree import Node
 
-class Height:
-    def __init__(self):
-        self.height = 0
-
 # O(n)
-def is_balanced(node, height):
-    left_height = Height()
-    right_height = Height()
-
+def is_balanced(node):
     if node == None:
-        return True
+        return 0
 
-    left = is_balanced(node.left, left_height)
-    right = is_balanced(node.right, right_height)
+    # checking left subtree
+    leftSubtreeHeight = is_balanced (node.left);
+    # if left subtree is not balanced then the entire tree is also not balanced
+    if leftSubtreeHeight == -1:
+        return -1
 
-    height.height = max(left_height.height, right_height.height) + 1
+    # checking right subtree
+    rightSubtreeHeight = is_balanced (node.right);
+    #if right subtree is not balanced then the entire tree is also not balanced
+    if rightSubtreeHeight == -1:
+        return -1
 
-    if abs(left_height.height - right_height.height) <= 1:
-        return left and right
+    #checking the difference of left and right subtree for current node
+    if abs(leftSubtreeHeight - rightSubtreeHeight) > 1:
+       return -1
 
-    return False
+    #if it is balanced then return the height
+    return max(leftSubtreeHeight, rightSubtreeHeight) + 1
 
 def _gen_balanced_1():
     root = Node(1)
@@ -79,7 +81,9 @@ class TestCase(unittest.TestCase):
 
     def test_min_height(self):
         for [tree_gen, result] in self.tests:
-            assert result == is_balanced(tree_gen(), Height())
+            resultValue = is_balanced(tree_gen())
+            isBalanced = True if resultValue > -1 else False
+            assert result == isBalanced
 
 if __name__ == "__main__":
     unittest.main()
