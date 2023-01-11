@@ -29,7 +29,7 @@ class TestCase(unittest.TestCase):
         (5, None),
     ]
 
-    def test_min_height(self):
+    def test_successor(self):
         for [key, result] in self.tests:
             node = self.bst.get_node(key)
             assert result == get_successor(node)

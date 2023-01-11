@@ -31,7 +31,7 @@ class TestCase(unittest.TestCase):
         ([3, 5, 7, 9, 10, 18, 20, 30, 40], 3)
     ]
 
-    def test_min_height(self):
+    def test_min_tree(self):
         for [elements, height] in self.tests:
             tree = get_tree(elements)
             assert height == get_binary_tree_height(tree) - 1

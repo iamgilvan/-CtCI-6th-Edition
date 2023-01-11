@@ -79,7 +79,7 @@ class TestCase(unittest.TestCase):
         (_gen_unbalanced_2, False),
     ]
 
-    def test_min_height(self):
+    def test_check_balance(self):
         for [tree_gen, result] in self.tests:
             resultValue = is_balanced(tree_gen())
             isBalanced = True if resultValue > -1 else False
