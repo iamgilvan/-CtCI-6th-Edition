@@ -4,21 +4,29 @@ import unittest
 from binary_search_tree import BinarySearchTree
 def bst_sequences(root: BinarySearchTree):
 
-    def __visit(roots: List):
+    def __visit(nodes: List):
             output = []
-            for root in roots:
-                choices = [choice for choice in roots if choice != root]
-                if root.left:
-                    choices.append(root.left)
-                if root.right:
-                    choices.append(root.right)
-
+            # iterate over subtree
+            for node in nodes:
+                # get nodes left
+                # remove one of the roots (valid choices), add its children to the set of choices
+                choices = [choice for choice in nodes if choice != node]
+                # adding children nodes to the list
+                if node.left:
+                    choices.append(node.left)
+                if node.right:
+                    choices.append(node.right)
+                # check if there are any node 
                 if len(choices) > 0:
+                    # getting sequences
+                    # recursively find all possible solutions for the new set of choices
                     sequences = __visit(choices)
+                    # Iterate over sequences
                     for sequence in sequences:
-                        output.append([root.key] + sequence)
+                        # Adding current node/key to the sequence list
+                        output.append([node.key] + sequence)
                 else:
-                    output.append([root.key])
+                    output.append([node.key])
             return output
 
     return __visit([root.root])
