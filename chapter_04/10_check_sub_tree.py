@@ -14,10 +14,10 @@ def is_subtree(tree, subtree):
 def same_tree(node, subnode):
 
     if not node or not subnode:
-        return False
+        return node == None and subnode == None
 
     if node.key == subnode.key:
-        return True
+        return same_tree(node.left, subnode.left) and same_tree(node.right, subnode.right)
 
     left = same_tree(node.left, subnode)
     right = same_tree(node.right, subnode)
