@@ -10,7 +10,7 @@ def is_subtree(tree, subtree):
         return False
 
     return same_tree(tree.root, subtree.root)
-
+#O(N)
 def same_tree(node, subnode):
 
     if not node or not subnode:

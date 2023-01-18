@@ -46,3 +46,29 @@ class BinarySearchTree:
             else:
                 current_node = current_node.right
         raise Exception("Can not find value in the tree")
+
+    #O(logN)
+    def delete_node(self, node, key):
+        if not node:
+            return None
+
+        if key > node.key:
+            node.right = self.delete_node(node.right, key)
+        elif key < node.key:
+            node.left = self.delete_node(node.left, key)
+        else:
+            if not node.left and not node.right:
+                node = None
+            elif node.right:
+                node.key = self.successor(node)
+                node.right = self.delete_node(node.right, node.key)
+            else:
+                node.key = node.parent.key
+                node.left = self.delete_node(node.left, node.key)
+        return node
+
+    def successor(self, node):
+        curr_node = node.right
+        while curr_node.left:
+            curr_node = curr_node.left
+        return curr_node.key
