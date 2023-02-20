@@ -1,0 +1,7 @@
+Explain what the following code does: ( ( n & ( n-1)) == 0)
+Answer:
+It means that n and n-1 never have a 1 bit in the same place.
+for example :
+n =      0000 1000
+n - 1  = 0000 0111
+for that if sta be true n and n-1 must have no 1s in common, so that statement checks if n is a power of 2 (or if n is 0)

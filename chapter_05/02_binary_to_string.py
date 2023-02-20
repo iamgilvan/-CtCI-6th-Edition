@@ -1,6 +1,5 @@
 import unittest
 
-#O(N)
 def toBinary(number):
     # Check if the number is Between 0 to 1 or Not
     if number >= 1 or number <= 0:
