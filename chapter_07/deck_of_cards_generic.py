@@ -156,10 +156,10 @@ class BlackJackHand(BlackJackCard):
 
 class Test(unittest.TestCase):
     def test_card_deck(self):
-        cards = [Card(2, "Hearts"), Card(4, "Clubs")]
+        cards = [Card(2, Suit.HEART), Card(4, Suit.CLUB)]
         deck = Deck()
         deck.set_deck_of_cards(cards)
-        self.assertEqual(deck.draw_card().suit, "Clubs")
+        self.assertEqual(deck.draw_card().suit, Suit.CLUB)
 
 if __name__ == "__main__":
     unittest.main()
