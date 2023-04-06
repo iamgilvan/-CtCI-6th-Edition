@@ -54,7 +54,7 @@ class TestCase(unittest.TestCase):
         (11, 13, 7),
     ]
 
-    def test_flip_bit_to_bit(self):
+    def test_next_number(self):
         for number, greater, smaller in self.test_cases:
             result = next_number(number)
             assert result.greatest == greater
