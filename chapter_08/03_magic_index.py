@@ -3,6 +3,9 @@ import unittest
 def magic_fast(arr):
     return __magic_fast(arr, 0, len(arr) - 1)
 
+
+#This is recursive solution to optimize method 1.
+#Time complexity : O(logN)
 def __magic_fast(arr, start, end):
     if end < start:
         return -1
