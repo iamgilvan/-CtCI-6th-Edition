@@ -10,7 +10,7 @@ def searched_in_rotated_array(arr, target):
         if arr[middle_idx] == target:
             return middle_idx
         if arr[start_idx] <= arr[middle_idx]:
-            if target > arr[middle_idx]  or target < arr[start_idx]:
+            if target > arr[middle_idx] or target < arr[start_idx]:
                 start_idx = middle_idx + 1
             else:
                 last_idx = middle_idx - 1
@@ -23,10 +23,11 @@ def searched_in_rotated_array(arr, target):
 class Test(unittest.TestCase):
     test_cases = [
         ([15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14], 5, 8),
-        ([14, 15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10], 16, 2)
+        ([14, 15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10], 16, 2),
+        ([1, 3, 4, 5, 7, 10, 14, 15, 16, 19, 20, 25], 16, 8)
     ]
     functions = [searched_in_rotated_array]
-    def test_group_anagram(self):
+    def test_search_in_rotate(self):
         for function in self.functions:
             for arr, target, expected in self.test_cases:
                 result = function(arr, target)
