@@ -67,7 +67,7 @@ class Test(unittest.TestCase):
         (["at", "", "", "", "ball", "", "", "car", "", "", "dad", "", ""], "ball", 4)
     ]
     functions = [sparse_search_recursive, sparse_search]
-    def test_sorted_search_no_size(self):
+    def test_sparse_search(self):
         for function in self.functions:
             for arr, target, expected in self.test_cases:
                 result = function(arr, 0 , len(arr) - 1, target)
