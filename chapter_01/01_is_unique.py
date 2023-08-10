@@ -50,7 +50,7 @@ class Test(unittest.TestCase):
         is_unique_char_using_set,
         is_unique_chars_pythonic
     ]
-    
+
     def test_is_unique_chars(self):
         num_runs = 10
         function_runtimes = defaultdict(float)

@@ -1,6 +1,6 @@
 import unittest
 
-
+# Time Complexity O(N)
 def find_all_duplicates(arr):
     my_arr = {}
     duplicates = []
