@@ -1,5 +1,5 @@
 
-# O(N) space
+# Time Complexity: O(N), Space Complexity: O(1)
 import unittest
 from chapter_02.linked_list import LinkedList
 

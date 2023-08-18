@@ -3,7 +3,7 @@ import unittest
 
 from chapter_02.linked_list import LinkedList
 
-# O(N) space
+# Time Complexity: O(N), Space Complexity: O(1)
 def delete_middle_node(ll, value_to_remove):
     current = ll.head
 

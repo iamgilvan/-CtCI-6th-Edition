@@ -1,5 +1,6 @@
 import unittest
 
+# Time Complexity: O(len(num)-1), Space Complexity(len(num)) where len(num) is digits in num
 def toBinary(number):
     # Check if the number is Between 0 to 1 or Not
     if number >= 1 or number <= 0:

@@ -2,7 +2,7 @@ import time
 import unittest
 from chapter_02.linked_list import LinkedList
 
-
+# Time Compelxity: O(N), Space Complexity: O(1)
 def sum_list(a, b):
     sum = 0
     ll_a = LinkedList()

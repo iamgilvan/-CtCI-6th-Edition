@@ -2,7 +2,7 @@ import time
 import unittest
 
 from chapter_02.linked_list import LinkedList
-
+# Time Complexity: O(N), Space Complexity: O(1)
 def remove_dups(ll):
     current = ll.head
     previous = None
@@ -18,7 +18,7 @@ def remove_dups(ll):
     ll.tail = previous
     return ll
 
-
+# Time Complexity: O(N^2), Space Complexity: O(1)
 def remove_dups_followup(ll):
     runner = current = ll.head
     while current:

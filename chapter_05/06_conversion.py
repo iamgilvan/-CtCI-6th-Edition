@@ -1,5 +1,6 @@
 import unittest
 
+# Time Complexity: O(b), Space Complexity: O(1)
 def bit_swap_required(numberFrom: int, numberTo: int) -> int:
     count = 0
     number = numberFrom ^ numberTo # XOR operator
