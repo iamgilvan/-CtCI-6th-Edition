@@ -1,6 +1,6 @@
 import unittest
 
-
+# Time Complexity: O(N* N!), Space Complexity: O(N*N!)
 def permutation_with_dups(letters):
     return permutations("", sorted(letters))
 

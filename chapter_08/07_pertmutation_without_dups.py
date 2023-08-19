@@ -1,6 +1,6 @@
 import unittest
 
-
+# Time Complexity: O(N^2 * N!), Space Complexity: O(N*N!)
 def permutation_without_dups(letters):
     return permutations("", letters)
 

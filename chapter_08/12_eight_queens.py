@@ -1,6 +1,6 @@
 import unittest
 
-
+# Time Complexity: O(N!), Space Complexity: O(result*N^2) ??
 def solveNQueens(queensNumbers: int):
     column = set()
     posDiag = set() # (r + c)

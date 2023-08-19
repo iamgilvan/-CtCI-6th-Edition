@@ -1,6 +1,5 @@
-
 import unittest
-
+# Time Complexity: O(2^N), Space Complexity: O(N) (max depth of stack)
 def get_towers_of_hanoi(disks_number, source, destination, buffer):
     if disks_number == 0:
         return
